@@ -6,16 +6,13 @@ chmod u+x /root/daily-mysql-backup/backup.sh
 ##This creates the backup dir.
 mkdir -p /backup/mysql_dump/
 
-#This will create the driectories and place the files where they need to be.
-logdir = /var/log/dailybackup/
-
-#Create log directory
+##Create log directory
 echo "Creating log file directory"
-mkdir -p $logdir
+mkdir -p /var/log/dailybackup/
 
 #Create log file
 echo "Creating log file"
-touch $logdir/daily.log
+touch /var/log/dailybackup/daily.log
 
 #Create symlink to cron file.
 echo "Creating symlink to daily cron"
