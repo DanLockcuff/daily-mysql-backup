@@ -2,7 +2,7 @@
 
 ##Adding execute to the backup script. 
 echo "Making the backup script executable"
-chmod u+x /root/daily-mysql-backup/backup.sh
+chmod u+x /root/daily-mysql-backup/backup
 
 ##This creates the backup dir.
 echo "Creating the backup dir if it doesn't exist"
@@ -34,6 +34,3 @@ echo "Setting cron permissions"
 chmod 755 /etc/cron.daily/mysql-daily
 
 echo "Looks like were good to go"
-
-
-
