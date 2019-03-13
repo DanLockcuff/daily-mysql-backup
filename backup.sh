@@ -27,5 +27,5 @@ databases=`mysql --defaults-file=/root/.my.cnf -e "SHOW DATABASES;" | grep -Ev "
 for db in $databases; do
 	echo "Backing up $db"
 mysqldump --defaults-file=/root/.my.cnf --databases $db | gzip > "$BACKUP_DIR/$db.sql.gz"
-echo "Backup Completed!"
+echo "Backup Completed on $(date +"%F_%H-%M-%S")"
 done
