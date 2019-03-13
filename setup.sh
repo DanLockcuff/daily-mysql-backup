@@ -29,6 +29,9 @@ echo "Lets create the symlink to the cron file"
 		echo "Creating symlink to daily cron"
 	    ln -s /root/daily-mysql-backup/mysql-daily /etc/cron.daily/mysql-daily
 	fi 
+#Setting perms on cron 
+echo "Setting cron permissions"
+chmod 755 /etc/cron.daily/mysql-daily
 
 echo "Looks like were good to go"
 

@@ -1,1 +1,2 @@
-/root/daily-mysql-backup/backup.sh > /var/log/dailybackup/daily.log
+#!/bin/sh
+/root/daily-mysql-backup/backup > /var/log/dailybackup/daily.log
