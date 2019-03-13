@@ -21,7 +21,7 @@ echo "Lets create the symlink to the cron file"
 	if [ -f /etc/cron.daily/mysql-daily ]
 	then
 	    echo "Looks like the file already exists, let me re-create it for you"
-	    rm -Rf /etc/cron.daily/mysql-daily /root/daily-mysql-backup/mysql-daily
+	    rm -Rf /etc/cron.daily/mysql-daily
 	    echo "Re-creating symlink to daily cron"
 	    ln -s /root/daily-mysql-backup/mysql-daily /etc/cron.daily/mysql-daily
 	
@@ -31,7 +31,6 @@ echo "Lets create the symlink to the cron file"
 	fi 
 
 echo "Looks like were good to go"
-end
 
 
 
