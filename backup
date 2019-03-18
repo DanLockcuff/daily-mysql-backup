@@ -21,11 +21,11 @@ echo "Creating new backup dir"
 mkdir -p "$BACKUP_DIR/"
 ##This searches for all the databases accessible to the root or above user and create an array.
 echo "Searching for databases to backup"
-databases=`mysql --defaults-file=/root/.my.cnf -e "SHOW DATABASES;" | grep -Ev "(Database|information_schema|performance_schema)"`
+databases=`mysql --defaults-file=/root/daily-mysql-backup/.my.cnf -e "SHOW DATABASES;" | grep -Ev "(Database|information_schema|performance_schema)"`
 
 ##This command takes each database found in the array and backs them up to the specified folder and compresses them to save space. 
 for db in $databases; do
 	echo "Backing up $db"
-mysqldump --defaults-file=/root/.my.cnf --databases $db | gzip > "$BACKUP_DIR/$db.sql.gz"
+mysqldump --defaults-file=/root/daily-mysql-backup/.my.cnf --databases $db | gzip > "$BACKUP_DIR/$db.sql.gz"
 echo "Backup Completed on $(date +"%F_%H-%M-%S")"
 done
